@@ -87,8 +87,10 @@ section:nth-child(2n) {
 section:nth-child(2n) h1,
 section:nth-child(2n) h2,
 section:nth-child(2n) h3,
-section:nth-child(2n) h3 {
-    color: #030;
+section:nth-child(2n) h4,
+section:nth-child(2n) h5,
+section:nth-child(2n) .h3 {
+    color: limegreen;
 }
 
 section h2 {
