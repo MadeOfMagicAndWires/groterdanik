@@ -233,6 +233,7 @@ section p {
     display: block;
 }
 
+#contact #algemeen a,
 .contact-info a {
     display: inline-block;
     color: red;
@@ -240,9 +241,12 @@ section p {
     margin-top: 10px;
 }
 
+#contact #algemeen a:hover,
 .contact-info a:hover {
     text-decoration: none;
     color: #fff;
+    transform: scale(1.5);
+    transition: transform 0.25s ease-in-out;
 }
 
 .contact-info .img-container span {
