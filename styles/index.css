@@ -21,10 +21,12 @@ header {
 }
 
 header h1 {
+    text-shadow: #ccc 1px 5px 5px;
     mix-blend-mode: difference;
-    font-family:"Raleway Bold", "Roboto", "Arial",sans-serif;
+    font-family: "Raleway Bold", "Roboto", "Arial",sans-serif;
     font-weight: 800;
     font-size: 10rem;
+    text-shadow: #ccc 1px 5px 5px;
 }
 
 header h3 {
@@ -105,9 +107,17 @@ section p {
     font-size: 1.2rem;
 }
 
-#online a {
-    color: #fff;
+#online #socials-container,
+#online #socials-container .group {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
 
+#online a {
+    flex: 0 1 1;
+    color: #fff;
 }
 
 #online span {
