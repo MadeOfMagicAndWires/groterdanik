@@ -21,12 +21,12 @@ header {
 }
 
 header h1 {
-    text-shadow: #ccc 1px 5px 5px;
     mix-blend-mode: difference;
-    font-family: "Raleway Bold", "Roboto", "Arial",sans-serif;
+    font-family: "Raleway", "Roboto", "Arial",sans-serif;
     font-weight: 800;
     font-size: 10rem;
     text-shadow: #ccc 1px 5px 5px;
+    white-space: nowrap;
 }
 
 header h3 {
@@ -192,14 +192,20 @@ section p {
 }
 
 #inhoud ul {
-    display: grid;
-    grid-template: auto / 1fr 1fr 1fr;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: center;
+    flex-wrap: wrap;
     list-style: none;
+
+    padding: 0;
 }
 
 #inhoud li.h3 {
+    flex: 1 0 33%;
     font-family: "Staatliches", "Georgia", sans-serif;
-    margin: 25px 0;
+    margin: 50px 0;
 }
 
 #inhoud li.h3::before {
@@ -207,11 +213,11 @@ section p {
     font-weight: 900;
     font-style: normal;
     font-variant: normal;
-    display: inline-block;
     line-height: 1;
-    font-size: 3rem;
-    margin-right: 15px;
+    font-size: 64px;
     text-rendering: auto;
+    margin: 0 0 30px 0;
+    display: block;
 }
 
 #inhoud li.h3:first-child::before {
@@ -228,6 +234,11 @@ section p {
     content: "\f6de";
     color: red;
 }
+
+#inhoud span.space {
+    flex: 2 0 33%;
+}
+
 
 #contact {
     background: #030;
@@ -278,4 +289,89 @@ section p {
 
 .contact-info:nth-child(4) .img-container span {
     color: orange;
+}
+
+
+/* large screens */
+@media screen and (min-device-width: 1201px) {
+
+    #inhoud ul li.h3::before {
+        display: inline-block;
+        margin: 0 15px 0 0;
+    }
+
+    #inhoud ul li.h3 h3 {
+        display: inline-block;
+    }
+}
+
+
+
+@media screen and (max-device-width:1024px) {
+    header h1 {
+        font-size: 7rem;
+        white-space: break-spaces;
+    }
+    #inhoud ul {
+
+        flex-direction: column;
+    }
+
+
+    #inhoud ul span {
+        display: none;
+    }
+
+}
+
+/* tablet */
+@media screen and  (max-device-width: 768px) {
+
+    header {
+        padding: 0;
+    }
+
+
+    header h1 {
+        white-space: pre-line;
+        word-spacing: 100vw;
+    }
+
+
+    #pilot iframe {
+        width: 480px;
+        height: 360px;
+    }
+
+
+}
+
+
+/* mobile */
+@media screen and (max-device-width: 480px) {
+    #pilot iframe {
+        width: 75vw;
+        height: 240px;
+    }
+
+    header h1 {
+        font-size: 7rem;
+    }
+
+    #contact #contact-grid {
+        grid-template: auto / 1fr;
+    }
+
+    #contact .contact-info {
+        margin: 75px auto;
+    }
+
+}
+
+
+/* smallest */
+@media screen and (max-device-width: 365px) {
+    header h1 {
+        font-size: 5rem;
+    }
 }
